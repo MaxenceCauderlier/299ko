@@ -308,6 +308,7 @@ class Template {
             return $this->getSubVar($var . $args, $parent);
         } else {
             // At least 1 child
+            /** @var string */
             $name = array_shift($parts);
             // Check if the name is a variable, callable, object, array or class
             if (!is_array($name) && !is_callable($name) && !is_object($name) && !isset($this->data[$name]) && !class_exists($name)) {
